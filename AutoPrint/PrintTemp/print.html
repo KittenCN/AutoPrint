@@ -1,0 +1,392 @@
+<style type="text/css">
+.fbold{
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.flexTitle {
+	letter-spacing: 0;
+	font-size: 1em;
+}
+.flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.flex-v {
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+.flex-1{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+.flex-2 {
+	-webkit-box-flex: 2;
+	-webkit-flex: 2;
+	-ms-flex: 2;
+	flex: 2;
+}
+.flex-3 {
+	-webkit-box-flex: 3;
+	-webkit-flex: 3;
+	-ms-flex: 3;
+	flex: 3;
+}
+.flex-align-center {
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.flex-pack-center {
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.flex-pack-justify-sb {
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+.flex-pack-justify-sa {
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: justify;
+	justify-content: space-around;
+}
+.flex-pack-justify-c {
+	-webkit-box-pack: justify;
+	-webkit-justify-content: center;
+	-ms-flex-pack: justify;
+	justify-content: center;
+}
+
+html, body, div, span, applet, object, iframe, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 12px;
+	font-family: "Microsoft YaHei", "SimHei", arial, verdana, sans-serif;
+	/*box-sizing: border-box;*/
+}
+
+.container-quater {
+	width: 214mm;
+	height: 283.8mm;
+	padding: 2.5%;
+}
+.container-A4 {
+	width: 210mm;
+	height: 297mm;
+	padding: 2.5%;
+}
+.container .shdTitle .flex-align-center {
+	font-size: 1.6em;
+	letter-spacing: 1em;
+	font-weight: bold;
+}
+.container table {
+	width: 100%;
+	margin: 1em 0;
+	table-layout: fixed;
+	empty-cells: show;
+	border-collapse: collapse;
+}
+.container table td,
+.container table th {
+	height: 36px;
+	border: 1px solid black;
+}
+.container table td {
+	padding: 0 0.5em 0;
+}
+.container table th {
+	background-repeat: repeat-x;
+}
+.container table .xhwidth {
+	width: 5%;
+}
+.container table .numwidth {
+	width: 6%;
+}
+.container table .mainwidth {
+	width: 18%;
+}
+.container table .midwidth {
+	width: 13%;
+}
+.container table .moreheight {
+	height: 108px;
+	padding: 1em 1em 0;
+}
+</style>
+<div class="flex flex-v container container-quater">
+	<div class="flex flex-pack-justify-sb shdTitle">
+		<div class="flex flex-v flex-pack-justify-sa">
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAloAAACGCAMAAAAy5tSlAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OEUxQUY1NDgzM0IxMTFFNzk5RjRGOEE2MUUwQ0JBNUUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OEUxQUY1NDczM0IxMTFFNzk5RjRGOEE2MUUwQ0JBNUUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MkIwQjhENzMzQjAxMUU3OUQ5NkQ1RjE3MjI4NENGOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MkIwQjhEODMzQjAxMUU3OUQ5NkQ1RjE3MjI4NENGOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PurFHAAAAAAGUExURQgD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" style="width:128px;">
+			<div> </div>
+			<div class="fbold">入库单号：</div>
+		</div>
+		<div class="flex flex-v flex-align-center flex-pack-justify-sa">
+			<div class="flexTitle"" style="font-size:1.3em;margin-bottom: 18px;">上海通陌仓储服务有限公司（金华库）</div>
+			<div class="flexTitle" style="font-size:29px;letter-spacing: 14px;">配料配送单</div>
+		</div>
+		<div class="flex flex-align-center flex-pack-center" id="$fcd_id"></div>
+	</div>
+	<br/>
+	<br/>
+	<div class="flex flex-pack-justify-sb ckdInfo">
+		<div class="flex flex-v">
+			<div class="flex-1 fbold">物料编码：$fcd_id-$print_num</div>
+			<div class="flex-1 fbold">供货单位：$ac_name</div>
+			<div class="flex-1 fbold">产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;线：$workflow</div>
+		</div>
+		<div class="flex flex-v">
+			<div class="flex-1 fbold">需求时间：$needing_time</div><!-- 发车时间+运输时间20分钟 -->
+			<div class="flex-1 fbold">生成时间：$create_time</div>
+			<div class="flex-1 fbold">取单时间：$qudan_time</div><!-- 打印时间 -->
+		</div>
+		<div class="flex flex-v">
+			<div class="flex-1 fbold">配送单位：$from_ac</div>
+			<div class="flex-1 fbold">道口信息：ZT-01&nbsp;&nbsp;&nbsp;&nbsp;$daokou</div>
+			<div class="flex-1 fbold">发车时间：$fache_time</div>
+		</div>
+	</div>
+	<br/>
+	<table>
+		<tr>
+			<th class="xhwidth">序号</th>
+			<th class="midwidth">物料编码</th>
+			<th class="mainwidth">物料名称</th>
+			<th class="numwidth">器具<br>用量</th>
+			<th class="numwidth">托盘<br>用量</th>
+			<th class="numwidth">配送<br>数量</th>
+			<th class="numwidth">实收<br>数量</th>
+			<th class="numwidth">不良<br>数量</th>
+			<th class="midwidth">取料位置</th>
+			<th class="numwidth">工位</th>
+			<th class="midwidth">签收</th>
+		</tr>
+		<tr>
+			<td>$list1_index</td>
+			<td>$list1_material_code</td>
+			<td>$list1_material_name</td>
+			<td>$list1_pallet_count</td>
+			<td>$list1_q_count</td>
+			<td>$list1_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list1_storage_code</td>
+			<td>$list1_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list2_index</td>
+			<td>$list2_material_code</td>
+			<td>$list2_material_name</td>
+			<td>$list2_pallet_count</td>
+			<td>$list2_q_count</td>
+			<td>$list2_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list2_storage_code</td>
+			<td>$list2_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list3_index</td>
+			<td>$list3_material_code</td>
+			<td>$list3_material_name</td>
+			<td>$list3_pallet_count</td>
+			<td>$list3_q_count</td>
+			<td>$list3_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list3_storage_code</td>
+			<td>$list3_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list4_index</td>
+			<td>$list4_material_code</td>
+			<td>$list4_material_name</td>
+			<td>$list4_pallet_count</td>
+			<td>$list4_q_count</td>
+			<td>$list4_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list4_storage_code</td>
+			<td>$list4_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list5_index</td>
+			<td>$list5_material_code</td>
+			<td>$list5_material_name</td>
+			<td>$list5_pallet_count</td>
+			<td>$list5_q_count</td>
+			<td>$list5_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list5_storage_code</td>
+			<td>$list5_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list6_index</td>
+			<td>$list6_material_code</td>
+			<td>$list6_material_name</td>
+			<td>$list6_pallet_count</td>
+			<td>$list6_q_count</td>
+			<td>$list6_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list6_storage_code</td>
+			<td>$list6_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list7_index</td>
+			<td>$list7_material_code</td>
+			<td>$list7_material_name</td>
+			<td>$list7_pallet_count</td>
+			<td>$list7_q_count</td>
+			<td>$list7_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list7_storage_code</td>
+			<td>$list7_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list8_index</td>
+			<td>$list8_material_code</td>
+			<td>$list8_material_name</td>
+			<td>$list8_pallet_count</td>
+			<td>$list8_q_count</td>
+			<td>$list8_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list8_storage_code</td>
+			<td>$list8_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list9_index</td>
+			<td>$list9_material_code</td>
+			<td>$list9_material_name</td>
+			<td>$list9_pallet_count</td>
+			<td>$list9_q_count</td>
+			<td>$list9_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list9_storage_code</td>
+			<td>$list9_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list10_index</td>
+			<td>$list10_material_code</td>
+			<td>$list10_material_name</td>
+			<td>$list10_pallet_count</td>
+			<td>$list10_q_count</td>
+			<td>$list10_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list10_storage_code</td>
+			<td>$list10_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list11_index</td>
+			<td>$list11_material_code</td>
+			<td>$list11_material_name</td>
+			<td>$list11_pallet_count</td>
+			<td>$list11_q_count</td>
+			<td>$list11_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list11_storage_code</td>
+			<td>$list11_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list12_index</td>
+			<td>$list12_material_code</td>
+			<td>$list12_material_name</td>
+			<td>$list12_pallet_count</td>
+			<td>$list12_q_count</td>
+			<td>$list12_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list12_storage_code</td>
+			<td>$list12_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list13_index</td>
+			<td>$list13_material_code</td>
+			<td>$list13_material_name</td>
+			<td>$list13_pallet_count</td>
+			<td>$list13_q_count</td>
+			<td>$list13_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list13_storage_code</td>
+			<td>$list13_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list14_index</td>
+			<td>$list14_material_code</td>
+			<td>$list14_material_name</td>
+			<td>$list14_pallet_count</td>
+			<td>$list14_q_count</td>
+			<td>$list14_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list14_storage_code</td>
+			<td>$list14_workplace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>$list15_index</td>
+			<td>$list15_material_code</td>
+			<td>$list15_material_name</td>
+			<td>$list15_pallet_count</td>
+			<td>$list15_q_count</td>
+			<td>$list15_material_count</td>
+			<td></td>
+			<td></td>
+			<td>$list15_storage_code</td>
+			<td>$list15_workplace</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td colspan="11" valign="top" class="moreheight flex-1 fbold">备注：</td>
+		</tr>
+		<tr>
+			<td colspan="5" valign="top" class="moreheight flex-1 fbold">资材签收：</td>
+			<td colspan="6" valign="top" class="moreheight flex-1 fbold">检验结论：</td>
+		</tr>
+	</table>
+	<div class="flex flex-pack-justify-sb shdNumNmae">
+		<div class="footLeft">
+			<p><span class="shdNum">第一联：</span><span class="shdName">资材部（白）</span></p>
+		</div>
+		<div class="footMid">
+			<p><span class="shdNumNext">第二联：</span><span class="shdNameNext">品质部（红）</span></p>
+		</div>
+		<div class="footRight">
+			<p><span class="shdNumNext">第三联：</span><span class="shdNameNext">配送单位（蓝）</span></p>
+		</div>
+	</div>
+</div>
