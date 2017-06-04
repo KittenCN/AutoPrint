@@ -13,7 +13,7 @@ using System.IO;
 
 namespace AutoPrint
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         //引入API函数
         [DllImport("user32 ")]
@@ -21,7 +21,7 @@ namespace AutoPrint
         [DllImport("user32.dll")]
         static extern void BlockInput(bool Block);
         public static string strPrintURL = "file:///" + Directory.GetCurrentDirectory() + "/PrintTemp/print.html";
-        public Form1()
+        public Main()
         {
             InitializeComponent();
         }

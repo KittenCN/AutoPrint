@@ -1,6 +1,6 @@
 ﻿namespace AutoPrint
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -36,7 +36,7 @@
             // 
             // btn_Lockall
             // 
-            this.btn_Lockall.Location = new System.Drawing.Point(110, 407);
+            this.btn_Lockall.Location = new System.Drawing.Point(218, 529);
             this.btn_Lockall.Name = "btn_Lockall";
             this.btn_Lockall.Size = new System.Drawing.Size(75, 23);
             this.btn_Lockall.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             // btn_printURL
             // 
-            this.btn_printURL.Location = new System.Drawing.Point(348, 407);
+            this.btn_printURL.Location = new System.Drawing.Point(316, 529);
             this.btn_printURL.Name = "btn_printURL";
             this.btn_printURL.Size = new System.Drawing.Size(75, 23);
             this.btn_printURL.TabIndex = 1;
@@ -59,14 +59,14 @@
             this.btn_printURL.UseVisualStyleBackColor = true;
             this.btn_printURL.Click += new System.EventHandler(this.btn_printURL_Click);
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 583);
             this.Controls.Add(this.btn_printURL);
             this.Controls.Add(this.btn_Lockall);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
