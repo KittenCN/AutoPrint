@@ -88,6 +88,8 @@
             this.Controls.Add(this.lab_warning);
             this.Controls.Add(this.btn_printURL);
             this.Controls.Add(this.btn_Lockall);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AutoPrinter";

@@ -41,16 +41,19 @@ namespace AutoPrint
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SW("button1_Click...");
             lockAll();
             oTimer_Get.Enabled = true;
         }
         private void lockAll()
         {
+            SW("lockAll...");
             //BlockInput(true);//锁定鼠标及键盘
         }
 
         private void oTimer_Get_Tick(object sender, EventArgs e)
         {
+            SW("oTimer_Get_Tick...");
             try
             {
                 if (!boolMain)
@@ -59,8 +62,10 @@ namespace AutoPrint
                     boolMain = true;
                     string strSQL = "select * from " + BaseView + " where print_num = " + intDebug;
                     DataSet DSSql = MySqlHelper.MySqlHelper.Query(strSQL, LinkString);
+                    SW("SQL::" + strSQL + "||SQL count::" + DSSql.Tables[0].Rows.Count.ToString());
                     if (DSSql.Tables[0].Rows.Count > 0)
                     {
+                        SW("Block Input");
                         BlockInput(true);
                         lab_warning.Visible = true;
                         this.Visible = true;
@@ -80,6 +85,7 @@ namespace AutoPrint
             }
             catch(Exception ex)
             {
+                SW("Error::" + ex.Message.ToString());
                 lab_warning.Visible = false;
                 this.TopMost = false;
                 this.WindowState = FormWindowState.Minimized;
@@ -88,16 +94,14 @@ namespace AutoPrint
                 boolMain = false;
             }
         }
-        private void OnTimedEvent(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            
-        }
         private void btn_printURL_Click(object sender, EventArgs e)
         {
+            SW("btn_printURL_Click...");
             PrintURL();
         }
         private void PrintURL()
         {
+            SW("PrintURL...");
             // Create a WebBrowser instance. 
             WebBrowser webBrowserForPrinting = new WebBrowser();
             // Add an event handler that prints the document after it loads.
@@ -108,6 +112,7 @@ namespace AutoPrint
         }
         private void PrintDocument(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+            SW("PrintDcument...");
             // Print the document now that it is fully loaded.
             ((WebBrowser)sender).Document.Encoding = "UTF-8";
             ((WebBrowser)sender).Print();
@@ -117,9 +122,10 @@ namespace AutoPrint
 
         private void Main_Load(object sender, EventArgs e)
         {
-            SW("Service Start.");
+            SW("Main_Load...");
             try
             {
+                SW("init...");
                 this.Visible = false;
                 XmlDocument xmlCon = new XmlDocument();
                 xmlCon.Load(strLocalAdd);
@@ -129,20 +135,20 @@ namespace AutoPrint
                 DBCacheRate = int.Parse(xnCon.SelectSingleNode("DBCacheRate").InnerText);
                 BaseView = xnCon.SelectSingleNode("BaseView").InnerText;
                 int intDebugMode = int.Parse(xnCon.SelectSingleNode("DebugMode").InnerText);
-
                 if (intDebugMode == 1)
                 {
                     SW("Debug Mode!");
                     intDebug = 1;
                     oTimer_Get_Tick(null, null);
                 }
+                SW("oTimer Start");
                 oTimer_Get.Enabled = true;
                 oTimer_Get.Interval = DBCacheRate * 1000 * 60;
-                SW("MainEvent Success");
+                SW("Main_Load Success");
             }
             catch (Exception ex)
             {
-                SW(ex.Source + "。" + ex.Message);
+                SW("Error::" + ex.Message);
             }
         }
         private void SW(string strT)
@@ -157,16 +163,18 @@ namespace AutoPrint
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Error!::" + ex.Message.ToString());
             }
         }
 
         private void tim_waiting_Tick(object sender, EventArgs e)
         {
+            SW("tim_waiting_Tick...");
             lab_warning.Visible = false;
             this.TopMost = false;
             this.WindowState = FormWindowState.Minimized;
             this.Visible = false;
+            SW("Release Input");
             BlockInput(false);
             tim_waiting.Enabled = false;
         }
