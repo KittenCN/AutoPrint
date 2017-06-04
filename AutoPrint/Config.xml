@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <!--数据库配置-->
+  <LinkString>Server=121.196.216.179;user id=tlwms;password=tlwms;Database=tlwms;Port=9980;charset=utf8;</LinkString>
+  <BaseView>view_fcd_detail</BaseView>
+  <!--远程接口地址-->
+  <RemoteInterface>http://121.196.216.179:70/tlwms/api/print/psd_auto?print_num=</RemoteInterface>
+  <!--主事件轮询间隔,单位分钟-->
+  <DBCacheRate>1</DBCacheRate>
+  <DebugMode>0</DebugMode>
+</Config>
