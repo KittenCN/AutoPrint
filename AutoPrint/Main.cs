@@ -51,31 +51,47 @@ namespace AutoPrint
 
         private void oTimer_Get_Tick(object sender, EventArgs e)
         {
-            if (!boolMain)
+            try
             {
-                //BlockInput(false);
-                boolMain = true;
-                string strSQL = "select * from " + BaseView + " where print_num = " + intDebug;
-                DataSet DSSql = MySqlHelper.MySqlHelper.Query(strSQL, LinkString);
-                if (DSSql.Tables[0].Rows.Count > 0)
+                if (!boolMain)
                 {
-                    BlockInput(true);
-                    lab_warning.Visible = true;
-                    this.Visible = true;
-                    this.WindowState = FormWindowState.Normal;
-                    this.TopMost = true;
-                    boolWaiting = false;
-                    PrintURL();
-                    lab_warning.Visible = false;
-                    this.TopMost = false;
-                    this.WindowState = FormWindowState.Minimized;
-                    this.Visible = false;
-                    BlockInput(false);
+                    //BlockInput(false);
+                    boolMain = true;
+                    string strSQL = "select * from " + BaseView + " where print_num = " + intDebug;
+                    DataSet DSSql = MySqlHelper.MySqlHelper.Query(strSQL, LinkString);
+                    if (DSSql.Tables[0].Rows.Count > 0)
+                    {
+                        BlockInput(true);
+                        lab_warning.Visible = true;
+                        this.Visible = true;
+                        this.WindowState = FormWindowState.Normal;
+                        this.TopMost = true;
+                        boolWaiting = false;
+                        PrintURL();
+                        tim_waiting.Enabled = true;
+                        //lab_warning.Visible = false;
+                        //this.TopMost = false;
+                        //this.WindowState = FormWindowState.Minimized;
+                        //this.Visible = false;
+                        //BlockInput(false);
+                    }
+                    boolMain = false;
                 }
+            }
+            catch(Exception ex)
+            {
+                lab_warning.Visible = false;
+                this.TopMost = false;
+                this.WindowState = FormWindowState.Minimized;
+                this.Visible = false;
+                BlockInput(false);
                 boolMain = false;
             }
         }
-
+        private void OnTimedEvent(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            
+        }
         private void btn_printURL_Click(object sender, EventArgs e)
         {
             PrintURL();
@@ -143,6 +159,16 @@ namespace AutoPrint
             {
 
             }
+        }
+
+        private void tim_waiting_Tick(object sender, EventArgs e)
+        {
+            lab_warning.Visible = false;
+            this.TopMost = false;
+            this.WindowState = FormWindowState.Minimized;
+            this.Visible = false;
+            BlockInput(false);
+            tim_waiting.Enabled = false;
         }
     }
 }
