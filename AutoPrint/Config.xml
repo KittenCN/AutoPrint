@@ -5,7 +5,9 @@
   <BaseView>view_fcd_detail</BaseView>
   <!--远程接口地址-->
   <RemoteInterface>http://121.196.216.179:70/tlwms/api/print/psd_auto?print_num=</RemoteInterface>
+  <RemoteCookiesInterface>http://121.196.216.179:70/tlwms/api/chart/harkzt?JSESSIONID=</RemoteCookiesInterface>
   <!--主事件轮询间隔,单位分钟-->
   <DBCacheRate>1</DBCacheRate>
+  <GetCookiesRate>1440</GetCookiesRate>
   <DebugMode>0</DebugMode>
 </Config>

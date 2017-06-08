@@ -34,6 +34,7 @@
             this.btn_printURL = new System.Windows.Forms.Button();
             this.lab_warning = new System.Windows.Forms.Label();
             this.tim_waiting = new System.Windows.Forms.Timer(this.components);
+            this.tim_GetCookies = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btn_Lockall
@@ -80,6 +81,10 @@
             this.tim_waiting.Interval = 10000;
             this.tim_waiting.Tick += new System.EventHandler(this.tim_waiting_Tick);
             // 
+            // tim_GetCookies
+            // 
+            this.tim_GetCookies.Tick += new System.EventHandler(this.tim_GetCookies_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -107,6 +112,7 @@
         private System.Windows.Forms.Button btn_printURL;
         private System.Windows.Forms.Label lab_warning;
         private System.Windows.Forms.Timer tim_waiting;
+        private System.Windows.Forms.Timer tim_GetCookies;
     }
 }
 
