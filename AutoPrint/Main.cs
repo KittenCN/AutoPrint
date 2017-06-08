@@ -352,7 +352,7 @@ namespace AutoPrint
             string strLen = "JSESSIONID=";
             if (strCookies.Substring(0, strLen.Length) == strLen)
             {
-                string strResults = strCookies.Split('@')[1].ToString();
+                string strResults = strCookies.Split('=')[1].ToString();
                 if (strResults != null && strResults.Length > 0)
                 {
                     string param = "";

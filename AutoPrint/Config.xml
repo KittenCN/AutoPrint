@@ -9,5 +9,5 @@
   <!--主事件轮询间隔,单位分钟-->
   <DBCacheRate>1</DBCacheRate>
   <GetCookiesRate>1440</GetCookiesRate>
-  <DebugMode>0</DebugMode>
+  <DebugMode>1</DebugMode>
 </Config>
