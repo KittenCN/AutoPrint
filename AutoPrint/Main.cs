@@ -335,7 +335,7 @@ namespace AutoPrint
             string strValue = "";
             StreamReader Reader = new StreamReader(s, Encoding.UTF8);
             while ((StrDate = Reader.ReadLine()) != null)
-            {
+            { 
                 strValue += StrDate + "\r\n";
             }
             return strValue;
